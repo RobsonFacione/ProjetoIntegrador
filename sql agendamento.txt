@@ -1,0 +1,10 @@
+PHP MY ADMIN
+
+BANCO: AGENDAMENTO
+
+cad_paciente
+
+CREATE TABLE `agendamento`.`cad_paciente` (`ID` BIGINT(10) NOT NULL AUTO_INCREMENT , 
+`nome` VARCHAR(50) NOT NULL , `cpf` INT(11) NOT NULL , `data_nascimento` DATE NOT NULL , 
+`telefone` INT(11) NOT NULL , 
+`email` INT(100) NOT NULL , PRIMARY KEY (`ID`)) ENGINE = InnoDB;
