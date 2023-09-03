@@ -1,0 +1,208 @@
+body {
+    width: 100vh;
+    height: 100vh;
+    background-color: black;
+    background-image: url('./ar_system.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container {
+
+    height: fit-content;
+    width: fit-content;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin:auto;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+
+}
+
+/* Defina a altura e largura do quadrado */
+.container {
+
+    height: fit-content;
+    width: fit-content;
+    padding: 1rem;
+    border-radius: 4px;
+    margin: auto;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+
+}
+
+/* Centralize o quadrado na página */
+.container {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+#nome{
+
+    background-color: white;
+    margin: 0px 10px;
+    color: black;
+    width: 150px;
+    height: 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: sans-serif;
+    padding-left: auto;
+
+
+}
+#sobrenome{
+
+    background-color: white;
+    margin: 0px 10px;
+    color: black;
+    width: 180px;
+    height: 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: sans-serif;
+    padding-left: auto;
+
+
+}
+
+.sobrenome{
+
+text-indent: 15px;
+
+}
+
+#cpf{
+
+    background-color: white;
+    margin: 0px 10px;
+    color: black;
+    width: 150px;
+    height: 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: sans-serif;
+    padding-left: auto;
+
+}
+
+   
+
+#telefone{
+
+    background-color: white;
+    margin: 0px 10px;
+    color: black;
+    width: 120px;
+    height: 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: sans-serif;
+    padding-left: auto;
+
+
+}
+#email {
+
+    background-color: white;
+    margin: 0px 10px;
+    color: black;
+    width: 250px;
+    height: 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: sans-serif;
+    padding-left: auto;
+
+
+}
+
+#data_nascimento{
+
+    background-color: white;
+    margin: 0px 10px;
+    color: black;
+    width: 110px;
+    height: 15px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-family: sans-serif;
+    padding-left: auto;
+
+}
+
+
+h3 {
+    text-indent: 15px;
+}
+
+header {
+
+    font-size: 30px;
+    font-family: sans-serif;
+    padding: 20px;
+    text-align: center;
+
+}
+
+.botao {
+    text-align: center;
+}
+
+/* Estilo padrão do botão */
+#botao {
+
+    background-color: rgb(100, 100, 243);
+    border: none;
+    color: white;
+    padding: 12px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Estilo do botão quando o mouse está sobre ele */
+#botao:hover {
+    background-color: #3458a7;
+}
+
+/* Estilo do botão quando o mouse é pressionado */
+#botao:active {
+    background-color: #0d0577;
+}
+
+.nome,
+.data_nascimento,
+.cpf,
+.telefone,
+.email {
+
+    display: inline-block;
+    vertical-align: middle;
+
+}
+
+/*.nome1,
+.nome2,
+.data_nascimento1,
+.data_nascimento2,
+.cpf1,
+.cpf2,
+.telefone1,
+.telefone2,
+.email1,
+.email2 {
+
+    display: inline-block;
+}
+

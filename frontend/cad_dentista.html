@@ -4,17 +4,81 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Dentista</title>
+    <link rel="stylesheet" href="cad_dentista.css">
 </head>
 <body>
-    <h1>Cadastro Dentista</h1>
-    <form action="cadastro_cad_dentista.php" method="post">
-        Nome: <input type="text" name="nome" required><br>
-        CPF: <input type="number" name="cpf" required><br>
-        Data de Nascimento: <input type="date" name="data_nascimento" required><br>
-        CRO: <input type="number" name="cro"><br>
-        Telefone: <input type="number" name="telefone"><br>
-        E-mail: <input type="email" name="email"><br>
-        <input type="submit" value="Cadastrar Dentista">
-    </form>
+    <div class="container">
+
+        <header>Cadastro de Dentista</header>
+
+
+        <form action="cadastro_cad_dentista.php" method="post"> <!--preenchimento igual o banco de dados-->
+            <div class="nome">
+                <div class="nome1">
+                    <h3 style="font-family: sans-serif;">Nome</h3>
+                </div>
+                <div class="nome2">
+                    <input type="text" name="nome" id="nome" placeholder="Digite o nome" required>
+                </div>
+            </div><br>
+
+            <div class="cpf">
+                <div class="cpf1">
+                    <h3 style="font-family: sans-serif;" >CPF</h3>
+                </div>
+                <div class="cpf2">
+                    <input type="text" name="cpf" id="cpf" placeholder="Digite o CPF" required>
+                </div>
+            </div><br>
+
+            <div class="data_nascimento">
+                <div class="data_nascimento1">
+                    <h3 style="font-family: sans-serif;">Data de Nascimento</h3>
+                </div>
+                <div class="data_nascimento2">
+                    <input type="date" name="data_nascimento" id="data_nascimento"
+                        placeholder="Digite a data de nascimento" required>
+                </div>
+            </div><br>
+
+            <div class="cro">
+                <div class="cro1">
+                    <h3 style="font-family: sans-serif;" >CRO</h3>
+                </div>
+                <div class="cro2">
+                    <input type="text" name="cro" id="cro" placeholder="Digite o CRO" required>
+                </div>
+            </div><br>
+
+            <div class="telefone">
+                <div class="telefone1">
+                    <h3 style="font-family: sans-serif;">Telefone</h3>
+                </div>
+                <div class="telefone2">
+                    <input type="tel" name="telefone" id="telefone" placeholder="Digite o telefone">
+                </div>
+            </div><br>
+
+            <div class="email">
+                <div class="email1">
+                    <h3 style="font-family: sans-serif;">E-mail</h3>
+                </div>
+                <div class="email2">
+                    <input type="email" name="email" id="email" placeholder="Informe seu email" required>
+                </div>
+            </div><br><br>
+
+            <div class="botao">
+                <input type="submit" id="botao" value="Cadastrar">
+            </div>
+        </form>
+        <!--"text" -  é para entrada com texto, 
+            "name" -  deve ser usado principalmente para identificar campos de formulários. Sempre que realizamos um “submit”
+             de um formulário, o atributo NAME é o identificador dentro de uma requisição GET ou POST no servidor.
+             "id" - O atributo ID é geralmente usado para facilitar a identificação de elementos que vão receber
+              um estilo CSS ou até mesmo uma função Javascript.
+            "placeholder" - é onde as informações vão ser digitadas
+             required - é obrigatório o preenchimento do campo para enviar o formulário-->
+    </div>
 </body>
 </html>

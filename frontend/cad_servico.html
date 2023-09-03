@@ -1,14 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Serviço</title>
+    <link rel="stylesheet" href="cad_servico.css">
 </head>
+
 <body>
-    <form action="cadastro_cad_servico.php" method="post">
-        Serviço: <input type="text" name="servico" required><br>
-        <input type="submit" value="Cadastrar Serviço">
-    </form>
+    <div class="container">
+
+        <header>Cadastrar Serviço</header>
+        <form action="cadastro_cad_servico.php" method="post">
+            <div class="servico">
+                <div class="tipo1">
+                    <h3 style="font-family: sans-serif; padding-left: 10px;">Serviço</h3>
+                </div>
+                <div class="tipo2">
+                    <input type="text" name="servico" id="servico"
+                        placeholder="Digite o tipo de serviço a ser cadastrado" required>
+                </div>
+            </div>
+            <br><br>
+
+            <div class="botao">
+                <input type="submit" id="botao" value="Cadastrar">
+            </div>
+
+        </form>
+
+    </div>
 </body>
+
 </html>

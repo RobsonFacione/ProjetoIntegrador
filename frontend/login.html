@@ -3,13 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Menu</title>
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <form action="menu.html" method="get">
-        CPF: <input type="number" name="cpf" required><br>
-        SENHA: <input type="password" name="senha" required>
-        <input type="submit" value="Entrar">
-    </form>
+    <div class="container">
+    
+        <header>Odonto System</header>
+    
+        <form action="menu.html" method="get">
+          <h3 style="font-family: sans-serif; text-indent: 20px;" >CPF</h3>
+    
+          <div class="CPF">
+            <input type="text" id="CPF" name="CPF" placeholder="Informe o CPF" required><br><br>
+          </div>
+    
+          <h3 style="font-family: sans-serif; text-indent: 20px;" >SENHA</H3>
+    
+          <div class="senha">
+            <input type="password" id="senha" name="password" placeholder="Digite sua senha" required><br>
+          </div>
+    
+    
+          <br>
+          <div class="opcoes">
+            <a href="#" style="font-family: sans-serif;">Esqueceu a senha?</a>
+            <br>
+            <a href="#" style="font-family: sans-serif;">Cadastre-se</a> 
+          </div>
+          <br>
+          <div class="entrar">
+            <input type="submit" class="botao" value="Entrar">
+          </div>
+        </form>
+      </div>
 </body>
 </html>
+

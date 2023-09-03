@@ -1,0 +1,88 @@
+body {
+    width: 100vh;
+    height: 100vh;
+    background-color: black;
+    background-image: url('./ar_system.jpg');
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+.container {
+
+    height: 300px;
+    width: 300px;
+    padding: 1.5rem;
+    border-radius: 4px;
+    margin: auto;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+
+}
+
+/* Defina a altura e largura do quadrado */
+.container {
+
+    height: fit-content;
+    width: fit-content;
+    padding: 1rem; 
+    border-radius: 4px;
+    margin: auto;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+
+}
+
+/* Centralize o quadrado na página */
+.container {
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+
+
+/* Estilo padrão do botão */
+#botao {
+
+    background-color: rgb(100, 100, 243);
+    border: none;
+    color: white;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    width: 400px;
+
+  }
+  
+  /* Estilo do botão quando o mouse está sobre ele */
+  #botao:hover {
+    background-color: #3458a7;
+  }
+  
+  /* Estilo do botão quando o mouse é pressionado */
+  #botao:active {
+    background-color: #0d0577;
+  }
+
+
+  .usuario{
+    font-size: 30px;
+    font-family: sans-serif;
+    padding: 20px;
+    text-align: center;
+  }
+
+  #menu{
+    text-align: center;
+  }
+

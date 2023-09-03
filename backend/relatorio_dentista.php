@@ -1,0 +1,67 @@
+<?php
+// Conexão com o banco de dados
+$servername = "localhost"; // substitua pelo seu servidor MySQL
+$username = "root"; // substitua pelo seu nome de usuário do MySQL
+$password = ""; // substitua pela sua senha do MySQL
+$dbname = "agendamento"; // substitua pelo nome do seu banco de dados
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Verificar a conexão
+if ($conn->connect_error) {
+    die("Erro na conexão com o banco de dados: " . $conn->connect_error);
+}
+
+// Consulta SQL para selecionar todos os dados da tabela "usuarios"
+$sql = "SELECT * FROM cad_dentista";
+$result = $conn->query($sql);
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Relatório de Dentista</title>
+</head>
+<body>
+    <h1>Relatório de Dentista Cadastrados</h1>
+    <table border="1">
+        <tr>
+            <th>ID</th>
+            <th>nome</th>
+            <th>cpf</th>
+            <th>data_nascimento</th>
+            <th>cro</th>
+            <th>telefone</th>
+            <th>email</th>
+            
+            <!-- Adicione mais colunas conforme necessário -->
+        </tr>
+        <?php
+        if ($result->num_rows > 0) {
+            while ($row = $result->fetch_assoc()) {
+                echo "<tr>";
+                echo "<td>" . $row["ID"] . "</td>";
+                echo "<td>" . $row["nome"] . "</td>";
+                echo "<td>" . $row["cpf"] . "</td>";
+                echo "<td>" . $row["data_nascimento"] . "</td>";
+                echo "<td>" . $row["cro"] . "</td>";
+                echo "<td>" . $row["telefone"] . "</td>";
+                echo "<td>" . $row["email"] . "</td>";
+
+                
+                // Adicione mais colunas conforme necessário
+                echo "</tr>";
+            }
+        } else {
+            echo "<tr><td colspan='3'>Nenhum usuário encontrado</td></tr>";
+        }
+        ?>
+    </table>
+</body>
+</html>
+
+<?php
+// Feche a conexão com o banco de dados
+$conn->close();
+?>
