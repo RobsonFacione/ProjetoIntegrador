@@ -12,16 +12,34 @@
 <body>
 
     <div class="container">
-        <header style="font-size: 30px; text-align: center;">Cadastro</header>
-        <div class="cad_paciente">
-            <button id="botao"><a href="cad_paciente.html">Cadastro de Paciente</a></button>
+
+        <div class="header">
+        <header>Cadastro</header><br>
         </div>
-        <div class="cad_dentista">
-            <button id="botao"><a href="cad_dentista.html">Cadastro de Dentista</a></button>
+
+        <form action="cad_paciente.html" method="get">
+            <div class="cad_paciente">
+                <input type="submit" id="botao" value="Cadastro de Paciente">
+            </div><br>
+        </form>
+
+        <form action="cad_dentista.html" method="get">
+            <div class="cad_dentista">
+                <input type="submit" id="botao" value="Cadastro de Dentista">
+            </div><br>
+        </form>
+
+        <form action="cad_servico.html" method="get">
+            <div class="cad_servico">
+                <input type="submit" id="botao" value="Cadastro de Serviço">
+            </div><br>
+        </form>
+
+        <div class="voltar">
+            <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a>
         </div>
-        <div class="cad_servico">
-            <button id="botao"><a href="cad_servico.html">Cadastro de Serviço</a></button>
-        </div>
+
+       
     </div>
 </body>
 

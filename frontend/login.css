@@ -9,17 +9,6 @@ body {
   }
   
   
-  header{
-  
-    font-size: 30px;
-    font-family: sans-serif;
-    padding: 20px;
-    text-align: center;
-    
-  }
-  
-  
-  
   .login {
     text-align: center;
     font-family: sans-serif;
@@ -54,7 +43,8 @@ body {
     color: black;
     width: 300px;
     height: 20px;
-    border-radius: 8px;
+    border-radius: 4px;
+    border: 1px solid black;
     font-size: 15px;
   }
   
@@ -76,6 +66,9 @@ body {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 4px;
+    border: 1px solid black;
+    color: black;
+    font-weight: bold;
   }
   
   /* Estilo do botão quando o mouse está sobre ele */
@@ -97,7 +90,7 @@ body {
     border-radius: 4px;
     margin: auto;
     background-color: #f2f2f2;
-    border: 1px solid #ccc;
+    border: 1px solid black;
   
   
   }
@@ -109,3 +102,56 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
   }
+
+  #botaoesqueceu{
+    
+    background-color: rgb(255, 80, 80);
+    border: none;
+    color: white;
+    padding: 2px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid black;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    
+}
+
+#botaocadastre{
+    
+  background-color: rgb(100, 100, 243);
+  border: none;
+  color: white;
+  padding: 2px 12px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 4px;
+  border: 1px solid black;
+  text-align: center;
+  color: black;
+  font-weight: bold;
+  
+}
+
+.header {
+
+  font-size: 30px;
+  font-family: sans-serif;
+  padding: 15px;
+  text-align: center;
+  border-radius: 4px;
+  border: 1px solid black;
+  background-color: rgb(127, 225, 255);
+  font-weight: bold;
+
+}

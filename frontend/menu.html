@@ -14,26 +14,37 @@
 
     <div class="container">
 
-        <div class="usuario">
+        <div class="header">
             <header>Olá seja bem vindo</header>
-        </div>
+        </div><br>
 
-      
+        <form action="agendamento.html" method="get">
+            <div class="agendamento">
+                <input type="submit" id="botao" value="Agendamento">
+            </div><br>
+        </form>
 
-        <div class="Agendamento">
-            <button id="botao"><a href="agendamento.html">AGENDAMENTO</a></button> <!--nessa aba colocar agendamento -->
-        </div>
-        <br>
-        <div class="Cancelamento">
-            <button id="botao"><a href="cancelamento.html">CANCELAMENTO</a></button><!--nessa aba colocar agendamento -->
-        </div>
-        <br>
-        <div class="Relatorio">
-            <button id="botao"><a href="relatorio.html">RELATÓRIO</a></button> <!--nessa aba colocar agendamento -->
-        </div>
-        <br>
-        <div class="Cadastro">
-            <button id="botao"><a href="cadastro.html">CADASTRO</a></button> <!--cadastro paciente-->
+
+        <form action="cancelamento.html" method="get">
+            <div class="cancelamento">
+                <input type="submit" id="botao" value="Cancelamento">
+            </div><br>
+        </form>
+
+        <form action="relatorio.html" method="get">
+            <div class="relatorio">
+                <input type="submit" id="botao" value="Relatório">
+            </div><br>
+        </form>
+        
+        <form action="cadastro.html" method="get">
+            <div class="cadastro">
+                <input type="submit" id="botao" value="Cadastro">
+            </div><br>
+        </form>
+        
+        <div class="voltar">
+            <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a>
         </div>
 
     </div>

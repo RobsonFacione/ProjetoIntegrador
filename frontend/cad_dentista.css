@@ -29,7 +29,7 @@ body {
     border-radius: 4px;
     margin: auto;
     background-color: #f2f2f2;
-    border: 1px solid #ccc;
+    border: 1px solid black;
 
 }
 
@@ -48,30 +48,16 @@ body {
     background-color: white;
     margin: 0px 10px;
     color: black;
-    width: 150px;
+    width: 328px;
     height: 15px;
-    border-radius: 8px;
+    border-radius: 4px;
+    border: 1px solid black;
     font-size: 15px;
     font-family: sans-serif;
     padding-left: auto;
 
 
 }
-#sobrenome{
-
-    background-color: white;
-    margin: 0px 10px;
-    color: black;
-    width: 180px;
-    height: 15px;
-    border-radius: 8px;
-    font-size: 15px;
-    font-family: sans-serif;
-    padding-left: auto;
-
-
-}
-
 
 
 #cpf{
@@ -81,7 +67,8 @@ body {
     color: black;
     width: 150px;
     height: 15px;
-    border-radius: 8px;
+    border-radius: 4px;
+    border: 1px solid black;
     font-size: 15px;
     font-family: sans-serif;
     padding-left: auto;
@@ -97,7 +84,8 @@ body {
     color: black;
     width: 150px;
     height: 15px;
-    border-radius: 8px;
+    border-radius: 4px;
+    border: 1px solid black;
     font-size: 15px;
     font-family: sans-serif;
     padding-left: auto;
@@ -109,9 +97,10 @@ body {
     background-color: white;
     margin: 0px 10px;
     color: black;
-    width: 120px;
+    width: 148px;
     height: 15px;
-    border-radius: 8px;
+    border-radius: 4px;
+    border: 1px solid black;
     font-size: 15px;
     font-family: sans-serif;
     padding-left: auto;
@@ -123,9 +112,10 @@ body {
     background-color: white;
     margin: 0px 10px;
     color: black;
-    width: 250px;
+    width: 328px;
     height: 15px;
-    border-radius: 8px;
+    border-radius: 4px;
+    border: 1px solid black;
     font-size: 15px;
     font-family: sans-serif;
     padding-left: auto;
@@ -138,26 +128,32 @@ body {
     background-color: white;
     margin: 0px 10px;
     color: black;
-    width: 110px;
-    height: 15px;
-    border-radius: 8px;
+    width: 150px;
+    height: 17px;
+    border-radius: 4px;
+    border: 1px solid black;
     font-size: 15px;
     font-family: sans-serif;
-    padding-left: auto;
+    padding: auto;
+    text-align: center;
 
 }
 
 
 h3 {
-    text-indent: 15px;
+    text-indent: 10px;
 }
 
 header {
 
     font-size: 30px;
     font-family: sans-serif;
-    padding: 20px;
+    padding: 15px;
     text-align: center;
+    border-radius: 4px;
+    border: 1px solid black;
+    background-color: rgb(127, 225, 255);
+    font-weight: bold;
 
 }
 
@@ -179,6 +175,9 @@ header {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 4px;
+    border: 1px solid black;
+    color: black;
+    font-weight: bold;
 }
 
 /* Estilo do botão quando o mouse está sobre ele */
@@ -191,7 +190,18 @@ header {
     background-color: #0d0577;
 }
 
-.nome,
+header {
+
+    font-size: 30px;
+    font-family: sans-serif;
+    padding: 15px;
+    text-align: center;
+    border-radius: 4px;
+    border: 1px solid black;
+    background-color: rgb(127, 225, 255);
+
+}
+
 .sobrenome,
 .data_nascimento,
 .cpf,
@@ -202,6 +212,31 @@ header {
     display: inline-block;
     vertical-align: middle;
 
+}
+
+#botaovoltar{
+    
+    background-color: rgb(100, 100, 243);
+    border: none;
+    color: white;
+    padding: 2px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+    border: 1px solid black;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    font-family: sans-serif;
+    
+}
+
+.voltar{
+    text-align: center;
 }
 
 /*.nome1,

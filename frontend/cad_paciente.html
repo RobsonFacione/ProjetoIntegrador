@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Paciente</title>
     <link rel="stylesheet" href="cad_paciente.css">
 </head>
+
 <body>
     <div class="container">
 
@@ -24,7 +26,7 @@
 
             <div class="cpf">
                 <div class="cpf1">
-                    <h3 style="font-family: sans-serif;" >CPF</h3>
+                    <h3 style="font-family: sans-serif;">CPF</h3>
                 </div>
                 <div class="cpf2">
                     <input type="number" name="cpf" id="cpf" placeholder="Digite o CPF" required>
@@ -55,7 +57,7 @@
                     <h3 style="font-family: sans-serif;">E-mail</h3>
                 </div>
                 <div class="email2">
-                    <input type="email" name="email" id="email" placeholder="Informe seu email" required>
+                    <input type="email" name="email" id="email" placeholder="Informe seu email">
                 </div>
             </div>
             <br><br>
@@ -63,6 +65,10 @@
                 <input type="submit" id="botao" value="Cadastrar">
             </div>
         </form>
+
+        <div class="voltar">
+            <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a>
+        </div>
         <!--"text" -  é para entrada com texto, 
             "name" -  deve ser usado principalmente para identificar campos de formulários. Sempre que realizamos um “submit”
              de um formulário, o atributo NAME é o identificador dentro de uma requisição GET ou POST no servidor.
@@ -70,6 +76,8 @@
               um estilo CSS ou até mesmo uma função Javascript.
             "placeholder" - é onde as informações vão ser digitadas
              required - é obrigatório o preenchimento do campo para enviar o formulário-->
-    </div>>
+    </div>
+
 </body>
+
 </html>

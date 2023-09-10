@@ -46,7 +46,9 @@ $result = $conn->query($sql);
             echo "<tr><td colspan='3'>Nenhum usuário encontrado</td></tr>";
         }
         ?>
-    </table>
+    </table><br><br>
+    
+    <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a>
 </body>
 </html>
 

@@ -10,8 +10,11 @@
 
 <body>
     <div class="container">
+        
+        <div class="header">
+            <header>Cadastrar Serviço</header>
+        </div>
 
-        <header>Cadastrar Serviço</header>
         <form action="cadastro_cad_servico.php" method="post">
             <div class="servico">
                 <div class="tipo1">
@@ -22,13 +25,18 @@
                         placeholder="Digite o tipo de serviço a ser cadastrado" required>
                 </div>
             </div>
-            <br><br>
+            <br>
 
             <div class="botao">
                 <input type="submit" id="botao" value="Cadastrar">
             </div>
 
         </form>
+
+        <div class="voltar">
+            <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a>
+        </div>
+
 
     </div>
 </body>

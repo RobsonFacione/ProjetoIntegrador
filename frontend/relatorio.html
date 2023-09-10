@@ -12,16 +12,33 @@
 <body>
 
     <div class="container">
-        <header style="font-size: 30px; text-align: center;">Relatórios</header>
-        <div class="relatorio_paciente">
-            <button id="botao"><a href="relatorio_paciente.html">Relatório de Paciente</a></button>
+
+        <div class="header">
+            <header style="font-size: 30px; text-align: center;">Relatórios</header>
+        </div><br>
+
+        <form action="relatorio_paciente.html" method="get">
+            <div class="relatorio_paciente">
+                <input type="submit" id="botao" value="Relatório de Paciente">
+            </div><br>
+        </form>
+
+        <form action="relatorio_dentista.html" method="get">
+            <div class="relatorio_dentista">
+                <input type="submit" id="botao" value="Relatório de Dentista">
+            </div><br>
+        </form>
+
+        <form action="relatorio_servico.html" method="get">
+            <div class="relatorio_servico">
+                <input type="submit" id="botao" value="Relatório de Serviço">
+            </div><br>
+        </form>
+
+        <div class="voltar">
+            <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a>
         </div>
-        <div class="relatorio_dentista">
-            <button id="botao"><a href="relatorio_dentista.html">Relatório de Dentista</a></button>
-        </div>
-        <div class="relatorio_servico">
-            <button id="botao"><a href="relatorio_servico.html">Relatório de Serviço</a></button>
-        </div>
+
     </div>
 </body>
 
