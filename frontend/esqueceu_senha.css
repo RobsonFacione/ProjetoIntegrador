@@ -73,7 +73,7 @@ body {
     cursor: pointer;
     border-radius: 4px;
     border: 1px solid black;
-    width: 400px;
+    width: 100px;
     font-weight: bold;
     color: black;
 
@@ -91,10 +91,10 @@ body {
 
   #botaovoltar{
     
-    background-color: rgb(255, 80, 80);
+    background-color: rgb(100, 100, 243);
     border: none;
     color: white;
-    padding: 12px 24px;
+    padding: 2px 12px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
@@ -110,8 +110,39 @@ body {
     
 }
 
-.sair{
+#email {
+
+    background-color: white;
+    margin: 0px 10px;
+    color: black;
+    width: 388px;
+    height: 15px;
+    border-radius: 4px;
+    border: 1px solid black;
+    font-size: 15px;
+    font-family: sans-serif;
+    padding-left: auto;
     text-align: center;
+
 }
   
+#enviar {
+
+    background-color: white;
+    margin: 0px 10px;
+    color: black;
+    width: 30px;
+    height: 15px;
+    border-radius: 4px;
+    border: 1px solid black;
+    font-size: 15px;
+    font-family: sans-serif;
+    padding-left: auto;
+    text-align: center;
+
+}
+
+.botao, .voltar{
+    text-align: center;
+}
 
