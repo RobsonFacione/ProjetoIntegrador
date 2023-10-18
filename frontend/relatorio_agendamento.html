@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Relatório de Agendamento</title>
+    <link rel="stylesheet" href="relatorio_servico.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="header">
+            <header>Relatório de Agendamento</header>
+        </div><br>
+
+        <form action="relatorio_agendamento.php" method="get">
+            <div class="botao">
+                <input type="submit" id="botao" value="Relatório de Agendamento">
+            </div>
+        </form><br>
+
+        <form action="relatorio_agendamento_nome.php" method="get">
+            <div class="botao">
+                <input type="submit" id="botao" value="Relatório de Agendamento por Nome">
+            </div>
+        </form><br>
+
+        <form action="relatorio_agendamento_data.php" method="get">
+            <div class="botao">
+                <input type="submit" id="botao" value="Relatório de Agendamento por Data">
+            </div>
+        </form><br>
+
+        <div class="voltar">
+            <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a>
+        </div>
+
+
+    </div>
+</body>
+
+</html>

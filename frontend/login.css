@@ -155,3 +155,7 @@ body {
   font-weight: bold;
 
 }
+
+.cadastro, .esqueceu{
+  text-align: center;
+}

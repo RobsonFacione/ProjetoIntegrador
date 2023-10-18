@@ -16,14 +16,26 @@
         <header>Agendamento</header>
 </div>
         <form action="agendamento.php" method="post">
-            <!--link com o banco de dados para realizar o cadastro, verifiar se há diferenças nas variaveis-->
+            <!--link com o banco de dados para realizar o cadastro, verifiar se há diferenças nas variaveis feito pelo Rold GPT -->
             <div class="paciente">
                 <div class="paciente1">
                     <h3 style="font-family: sans-serif;" id="paciente1">Nome</h3>
                 </div>
                 <div class="paciente2">
-                    <input type="text" id="paciente" name="paciente_id" placeholder="Digite o nome do paciente" required>
-                </div>
+                    <!-- Início select dinâmico paciente -->
+                    <select name="paciente_id" id="paciente_id">
+                        <?php
+                        $conexao = new mysqli("localhost", "root", "", "agendamento");
+                        $sql = "SELECT id, nome FROM cad_paciente";
+                        $result = $conexao->query($sql);
+
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<option value='" . $row['id'] . "'>" . $row['nome'] . "</option>";
+                        }
+                        ?>
+                    </select><br>
+                    <!-- Fim select dinâmico paciente feito pelo Rold GPT -->
+				</div>
             </div><br>
 
             <div class="data">    
@@ -49,11 +61,19 @@
                     <h3 style="font-family: sans-serif;">Dentista</h3>
                 </div>
                 <div class="dentista2">
-                    <input type="text" id="dentista" name="dentista_id"
-                        placeholder="Digite o nome do dentista" required>
-                </div>
-            </div><br>
+                <!-- Início select dinâmico dentista -->
+                <select name="dentista_id" id="dentista_id">
+                    <?php
+                    $sql = "SELECT id, nome FROM cad_dentista";
+                    $result = $conexao->query($sql);
 
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<option value='" . $row['id'] . "'>" . $row['nome'] . "</option>";
+                    }
+                    $conexao->close();
+                    ?>
+                </select><br>
+                <!-- Fim select dinâmico dentista -->
             <div class="servico">
                 <div class="servico1">
                     <h3 style="font-family: sans-serif;">Serviço</h3>
