@@ -12,9 +12,9 @@
 <body>
 
     <div class="container">
-<div class="header">
-        <header>Agendamento</header>
-</div>
+        <div class="header">
+            <header>Agendamento</header>
+        </div>
         <form action="agendamento.php" method="post">
             <!--link com o banco de dados para realizar o cadastro, verifiar se há diferenças nas variaveis feito pelo Rold GPT -->
             <div class="paciente">
@@ -23,7 +23,7 @@
                 </div>
                 <div class="paciente2">
                     <!-- Início select dinâmico paciente -->
-                    <select name="paciente_id" id="paciente_id">
+                    <select name="paciente_id" id="paciente">
                         <?php
                         $conexao = new mysqli("localhost", "root", "", "agendamento");
                         $sql = "SELECT id, nome FROM cad_paciente";
@@ -34,7 +34,7 @@
                         }
                         ?>
                     </select><br>
-                    <!-- Fim select dinâmico paciente feito pelo Rold GPT -->
+                    <!-- Fim select dinâmico  -->
 				</div>
             </div><br>
 
@@ -62,7 +62,7 @@
                 </div>
                 <div class="dentista2">
                 <!-- Início select dinâmico dentista -->
-                <select name="dentista_id" id="dentista_id">
+                <select name="dentista_id" id="dentista">
                     <?php
                     $sql = "SELECT id, nome FROM cad_dentista";
                     $result = $conexao->query($sql);
@@ -79,12 +79,19 @@
                     <h3 style="font-family: sans-serif;">Serviço</h3>
                 </div>
                 <div class="servico2">
-                    <input type="text" id="servico" name="servico_id"
-                        placeholder="Digite o tipo de serviço" required>
-                </div>
-            </div><br>
+                <select name="servico_id" id="servico">
+                        <?php
+                        $conexao = new mysqli("localhost", "root", "", "agendamento");
+                        $sql = "SELECT id, servico FROM cad_servico";
+                        $result = $conexao->query($sql);
 
-            <br>
+                        while ($row = $result->fetch_assoc()) {
+                            echo "<option value='" . $row['id'] . "'>" . $row['servico'] . "</option>";
+                        }
+                        ?>
+                    </select><br>
+                </div><br>
+        
 
             <div class="botao">
                 <input type="submit" id="botao" value="Agendar">

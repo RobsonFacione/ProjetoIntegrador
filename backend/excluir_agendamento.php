@@ -14,10 +14,11 @@ if (isset($_GET["id"])) {
     }
 
     // Consulta SQL para excluir o agendamento
-    $sql = "DELETE FROM vw_agendamento WHERE ID = $id";
+    $sql = "DELETE FROM agendamento WHERE ID = $id";
 
     if ($conn->query($sql) === TRUE) {
-        echo "Agendamento excluído com sucesso.";
+        echo '<script>alert("Agendamento excluído.");</script>';
+        echo '<meta http-equiv="refresh" content="2;url=relatorio_agendamento.php">';
     } else {
         echo "Erro ao excluir o agendamento: " . $conn->error;
     }
