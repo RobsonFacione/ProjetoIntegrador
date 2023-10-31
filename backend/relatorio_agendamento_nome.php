@@ -64,7 +64,7 @@ $result = $conn->query($sql);
                 echo "<td>" . $row["hora"] . "</td>";
                 echo "<td>" . $row["dentista_nome"] . "</td>";
                 echo "<td>" . $row["servico_nome"] . "</td>";
-                echo "<td><a href='http://seu-link-de-editar'>editar</a> <a href='http://seu-link-de-excluir'>excluir</a></td>";
+                echo "<td><a href='editar_agendamento.php?id=" . $row["ID"] . "'>Editar</a> <a href='excluir_agendamento.php?id=" . $row["ID"] . "'>Excluir</a></td>";
                 // Adicione mais colunas conforme necessário
                 echo "</tr>";
             }

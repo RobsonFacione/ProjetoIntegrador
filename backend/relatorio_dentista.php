@@ -12,8 +12,8 @@ if ($conn->connect_error) {
     die("Erro na conexão com o banco de dados: " . $conn->connect_error);
 }
 
-// Consulta SQL para selecionar todos os dados da tabela "usuarios"
-$sql = "SELECT * FROM cad_dentista";
+// Consulta SQL para selecionar todos os dados da tabela "cad_dentista"
+$sql = "SELECT *, YEAR(CURDATE()) - YEAR(data_nascimento) - (DATE_FORMAT(CURDATE(), '%m-%d') < DATE_FORMAT(data_nascimento, '%m-%d')) AS idade FROM cad_dentista";
 $result = $conn->query($sql);
 
 ?>
@@ -24,16 +24,17 @@ $result = $conn->query($sql);
     <title>Relatório de Dentista</title>
 </head>
 <body>
-    <h1>Relatório de Dentista Cadastrados</h1>
+    <h1>Relatório de Dentistas Cadastrados</h1>
     <table border="1">
         <tr>
             <th>ID</th>
-            <th>nome</th>
-            <th>cpf</th>
-            <th>data_nascimento</th>
-            <th>cro</th>
-            <th>telefone</th>
-            <th>email</th>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Data de Nascimento</th>
+            <th>Idade</th>
+            <th>CRO</th>
+            <th>Telefone</th>
+            <th>Email</th>
             
             <!-- Adicione mais colunas conforme necessário -->
         </tr>
@@ -45,22 +46,23 @@ $result = $conn->query($sql);
                 echo "<td>" . $row["nome"] . "</td>";
                 echo "<td>" . $row["cpf"] . "</td>";
                 echo "<td>" . $row["data_nascimento"] . "</td>";
+                echo "<td>" . $row["idade"] . " anos</td>"; // Exibição da idade calculada
                 echo "<td>" . $row["cro"] . "</td>";
                 echo "<td>" . $row["telefone"] . "</td>";
                 echo "<td>" . $row["email"] . "</td>";
-
+                echo '<td><a href="editar_dentista.php?id=' . $row["ID"] . '">Editar</a></td>';
                 
                 // Adicione mais colunas conforme necessário
                 echo "</tr>";
             }
         } else {
-            echo "<tr><td colspan='3'>Nenhum usuário encontrado</td></tr>";
+            echo "<tr><td colspan='8'>Nenhum dentista encontrado</td></tr>";
         }
         ?>
     </table><br><br>
     
-        <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a>
-            
+    <a href="relatorio_dentista.html" id="botaovoltar">Voltar</a><br><br>
+    
 </body>
 </html>
 
