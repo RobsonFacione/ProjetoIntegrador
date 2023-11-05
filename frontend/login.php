@@ -6,6 +6,12 @@ if (isset($_SESSION['nome_do_usuario'])) {
 } else {
     $nomeUsuario = "Usuário não autenticado"; // Define um valor padrão caso o usuário não esteja autenticado
 }
+
+$error_message = '';
+if (isset($_GET['error']) && $_GET['error'] === '1') {
+    $error_message = 'CPF ou senha incorretos. Tente novamente.';
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -16,10 +22,18 @@ if (isset($_SESSION['nome_do_usuario'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login</title>
   <link rel="stylesheet" href="login.css">
+  <style>
+        .error-message {
+            color: red;
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
   <div class="container">
+
+
 
     <div class="header">
       <header>Odonto System</header>
@@ -37,6 +51,13 @@ if (isset($_SESSION['nome_do_usuario'])) {
       <div class="senha">
         <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required><br>
       </div><br>
+
+      <!-- Se houver uma mensagem de erro, exiba-a aqui -->
+<?php if (!empty($error_message)) : ?>
+            <div class="error-message">
+                <?php echo $error_message; ?>
+            </div>
+        <?php endif; ?>
 
       <div class="entrar">
         <input type="submit" class="botao" value="Entrar">

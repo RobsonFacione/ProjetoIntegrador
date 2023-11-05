@@ -52,31 +52,86 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <html>
 <head>
     <title>Editar Dentista</title>
+    <link rel="stylesheet" href="editar_dentista.css">
 </head>
 <body>
-    <h1>Editar Dentista</h1>
+<div class="container">
+
+    <header>Editar Dados do Dentista</header>
     <?php if ($mensagem !== "") : ?>
         <p><?php echo $mensagem; ?></p>
     <?php endif; ?>
+
+
     <form method="post" action="editar_dentista.php">
+
         <input type="hidden" name="id" value="<?php echo $dentista["ID"]; ?>">
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" value="<?php echo $dentista["nome"]; ?>"><br>
-        <label for="cpf">CPF:</label>
-        <input type="text" name="cpf" value="<?php echo $dentista["cpf"]; ?>"><br>
-        <label for="data_nascimento">Data de Nascimento:</label>
-        <input type="text" name="data_nascimento" value="<?php echo $dentista["data_nascimento"]; ?>"><br>
-        <label for="cro">CRO:</label>
-        <input type="text" name="cro" value "<?php echo $dentista["cro"]; ?>"><br>
-        <label for="telefone">Telefone:</label>
-        <input type="text" name="telefone" value="<?php echo $dentista["telefone"]; ?>"><br>
-        <label for="email">Email:</label>
-        <input type="text" name="email" value="<?php echo $dentista["email"]; ?>"><br>
-        <input type="submit" value="Salvar">
+
+        <div class="nome">
+            <div class="nome1">
+                <h3 style="font-family: sans-serif;">Nome</h3>
+            </div>
+            <div class="nome2">
+                <input type="text" name="nome" id="nome" value="<?php echo $dentista["nome"]; ?>"><br>
+            </div>
+        </div><br>
+
+        <div class="cpf">
+            <div class="cpf1">
+                <h3 style="font-family: sans-serif;">CPF</h3>
+            </div>
+            <div class="cpf2">
+                <input type="text" name="cpf" id="cpf" value="<?php echo $dentista["cpf"]; ?>"><br>
+            </div>
+        </div>
+
+        <div class="data">
+            <div class="data1">
+                <h3 style="font-family: sans-serif;">Data de Nascimento</h3>
+            </div>
+            <div class="data2">
+                <input type="text" name="data_nascimento" id="data" value="<?php echo $dentista["data_nascimento"]; ?>"><br>
+            </div>
+        </div><br>
+
+        <div class="cro">
+            <div class="cro1">
+                <h3 style="font-family: sans-serif;">CRO</h3>
+            </div>
+            <div class="cro2">
+                <input type="text" name="cro" id="cro" value="<?php echo $dentista["cro"]; ?>"><br>
+            </div>
+        </div>
+
+        <div class="telefone">
+            <div class="telefone1">
+                <h3 style="font-family: sans-serif;">Telefone</h3>
+            </div>
+            <div class="telefone2">
+                <input type="text" name="telefone" id="telefone "value="<?php echo $dentista["telefone"]; ?>"><br>
+            </div>
+        </div>
+
+        <div class="email">
+            <div class="email1">
+                <h3 style="font-family: sans-serif;">E-mail</h3>
+            </div>
+            <div class="email2">
+                <input type="text" name="email" id="email" value="<?php echo $dentista["email"]; ?>"><br>
+            </div>
+        </div>
+
+        <div class="botao">
+            <input type="submit" id="botao" value="Salvar Alterações">
+        </div>
+
     </form>
-    
-    <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a><br><br>
-    <a href="relatorio_dentista.php">Retornar para o relatório de dentistas</a>
+
+        <div class="voltar">
+            <a href="relatorio_dentista.php" id="botaovoltar">Voltar</a>
+        </div>
+
+</div> 
 </body>
 </html>
 

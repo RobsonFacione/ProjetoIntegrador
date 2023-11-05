@@ -19,13 +19,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result->num_rows > 0) {
             echo '<script>alert("Erro: O registro já existe no banco de dados.");</script>';
-            echo '<meta http-equiv="refresh" content="2;url=agendamento.html">';
+            echo '<meta http-equiv="refresh" content="2;url=agendamentoForm.php">';
         } else {
             // Inserir o registro se ele não existe
             $insertQuery = "INSERT INTO agendamento (paciente_id, dia, hora, dentista_id, servico_id) VALUES ('$paciente_id', '$dia', '$hora', '$dentista_id', '$servico_id')";
             if ($conexao->query($insertQuery) === TRUE) {
                 echo '<script>alert("Registro cadastrado com sucesso.");</script>';
-                echo '<meta http-equiv="refresh" content="2;url=menu.html">';
+                echo '<meta http-equiv="refresh" content="2;url=menu.php">';
             } else {
                 echo "Erro ao cadastrar registro: " . $conexao->error;
             }

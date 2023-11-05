@@ -26,7 +26,7 @@ $pdf->AddPage();
 
 $pdf_html = '<h1>Relatório de Agendamento por Data</h1>';
 $pdf_html .= '<table border="1">';
-$pdf_html .= '<tr><th>ID</th><th>paciente_nome</th><th>dia</th><th>hora</th><th>dentista_nome</th><th>servico_nome</th></tr>';
+$pdf_html .= '<tr><th>ID</th><th>Nome</th><th>Dia</th><th>Hora</th><th>Dentista</th><th>Serviço</th></tr>';
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {

@@ -10,45 +10,45 @@
 
 <body>
 
-<div class="container">
+  <div class="container">
 
-  <div class="header">
-  <header>Cadastro Usuário</header>
+    <div class="header">
+      <header>Cadastro Usuário</header>
+    </div>
+
+    <form action="cadastro_cad_usuario.php" method="post">
+
+      <div class="nome">
+        <h3 style="font-family: sans-serif;">Nome</h3>
+        <input type="text" id="nome" name="nome" placeholder="Digite o nome" required>
+      </div><br>
+
+      <div class="email">
+        <h3 style="font-family: sans-serif;">E-mail</h3>
+        <input type="email" id="email" name="email" placeholder="Digite o e-mail" required>
+      </div><br>
+
+      <div class="cpf">
+        <h3 style="font-family: sans-serif;">CPF</h3>
+        <input type="text" id="cpf" name="cpf" placeholder="Digite o CPF" required>
+      </div>
+
+      <div class="senha">
+        <h3 style="font-family: sans-serif;">Senha</h3>
+        <input type="password" id="senha" name="senha" placeholder="Digite a senha" required>
+      </div><br><br>
+
+
+      <div class="botao">
+        <input type="submit" id="botao" value="Cadastrar">
+      </div>
+      </form>
+
+    <div class="voltar">
+      <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a>
+    </div>
+
   </div>
-
-  <form action="cadastro_cad_usuario.php" method="post">
-
-    <div class="nome">
-      <h3 style="font-family: sans-serif;">Nome</h3>
-      <input type="text" id="nome" name="nome" placeholder="Digite o nome" required>
-    </div><br>
-    
-    <div class="email">
-      <h3 style="font-family: sans-serif;">E-mail</h3>
-      <input type="email" id="email" name="email" placeholder="Digite o e-mail" required>
-    </div><br>
-
-    <div class="cpf">
-      <h3 style="font-family: sans-serif;">CPF</h3>
-      <input type="text" id="cpf" name="cpf" placeholder="Digite o CPF" required>
-    </div>
-
-    <div class="senha">
-      <h3 style="font-family: sans-serif;">Senha</h3>
-      <input type="password" id="senha" name="senha" placeholder="Digite a senha" required>
-    </div><br><br>
-
-    
-    <div class="botao">
-      <input type="submit" id="botao" value="Cadastrar">
-    </div>
-  </form>
-
-  <div class="voltar">
-    <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a>
-</div>
-  
-</div>
 </body>
 
 </html>

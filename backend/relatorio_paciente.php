@@ -30,6 +30,15 @@ $result = $conn->query($sql);
 <html>
 <head>
     <title>Relatório de Paciente</title>
+    <style>
+        body{
+            background-color: black;
+            background-image: url('./ar_system.jpg');
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style> 
 </head>
 <body>
     <h1>Relatório de Pacientes Cadastrados</h1>
@@ -73,8 +82,7 @@ $result = $conn->query($sql);
         ?>
     </table><br><br>
     
-    <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a><br><br>
-    <a href="relatorio_paciente.html">Voltar para a página Relatório de Pacientes</a>
+    <a href="relatorio_paciente.html">Voltar</a>
 </body>
 </html>
 

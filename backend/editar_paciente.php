@@ -62,24 +62,73 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Editar Paciente</title>
+    <title>Editar Dados do Paciente</title>
+    <link rel="stylesheet" href="editar_paciente.css">
 </head>
 <body>
-    <h1>Editar Paciente</h1>
+    <div class="container">
+
+    <header>Editar Dados do Paciente</header>
     <?php if (!empty($update_message)) : ?>
         <p><?php echo $update_message; ?></p>
     <?php endif; ?>
+    
     <form method="post">
-        <input type="text" name="novo_nome" placeholder="Novo Nome" value="<?php echo $nome; ?>">
-        <input type="text" name="novo_cpf" placeholder="Novo CPF" value="<?php echo $cpf; ?>">
-        <input type="text" name="nova_data_nascimento" placeholder="Nova Data de Nascimento" value="<?php echo $data_nascimento; ?>">
-        <input type="text" name="novo_telefone" placeholder="Novo Telefone" value="<?php echo $telefone; ?>">
-        <input type="text" name="novo_email" placeholder="Novo Email" value="<?php echo $email; ?>">
-        <input type="submit" name="submit" value="Salvar Alterações">
-    </form>
-    <br>
-    <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a>
-</body>
+
+    <div class="paciente">
+        <div class="paciente1">
+            <h3 style="font-family: sans-serif;">Nome</h3>
+        </div>
+        <div class="paciente2">
+            <input type="text" name="novo_nome" id="paciente" text-indent="10px" placeholder="Novo Nome" value="<?php echo $nome; ?>">
+        </div>
+    </div><br>
+
+    <div class="cpf">
+        <div class="cpf1">
+            <h3 style="font-family: sans-serif;">CPF</h3>
+        </div>
+        <div class="cpf2">
+            <input type="text" name="novo_cpf" id="cpf" placeholder="Novo CPF" value="<?php echo $cpf; ?>">
+        </div>
+    </div>
+
+    <div class="data">
+        <div class="data1">
+            <h3 style="font-family: sans-serif;">Data de Nascimento</h3>
+        </div>
+        <div class="data2">
+            <input type="text" name="nova_data_nascimento" id="data"placeholder="Nova Data de Nascimento" value="<?php echo $data_nascimento; ?>">
+        </div>
+    </div><br>
+
+    <div class="telefone">
+        <div class="telefone1">
+            <h3 style="font-family: sans-serif;">Telefone</h3>
+        </div>
+        <div class="telefone2">
+            <input type="text" name="novo_telefone" id="telefone"placeholder="Novo Telefone" value="<?php echo $telefone; ?>">
+        </div>
+    </div><br>
+
+    <div class="email">
+        <div class="email1">
+            <h3 style="font-family: sans-serif;">E-mail</h3>
+        </div>
+        <div class="email2">
+            <input type="text" name="novo_email" id="email" placeholder="Novo Email" value="<?php echo $email; ?>">
+        </div>
+    </div><br>
+
+    <div class="botao">
+                <input type="submit" name="submit" id="botao" value="Salvar Alterações">
+    </div>
+</form>
+            <div class="voltar">
+                <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a>
+            </div>
+        
+    </div>
 </html>
 
 <?php

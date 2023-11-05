@@ -89,7 +89,7 @@ $result = $conn->query($sql);
     <a href="pdf_agendamento_data.php">Gerar PDF</a><br><br>
 
 
-    <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a>
+    <a href="relatorio_agendamento.html" id="botaovoltar">Voltar</a>
 </body>
 </html>
 

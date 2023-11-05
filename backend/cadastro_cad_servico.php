@@ -11,7 +11,7 @@
         $sql = "INSERT INTO cad_servico (servico) VALUES ('$servico')";
         if ($conexao->query($sql) === TRUE) {
             echo '<script>alert("Registro cadastrado com sucesso.");</script>';
-            echo '<meta http-equiv="refresh" content="2;url=menu.html">';
+            echo '<meta http-equiv="refresh" content="2;url=menu.php">';
         } else {
             echo "Erro ao cadastrar registro: " . $conexao->error;
         }

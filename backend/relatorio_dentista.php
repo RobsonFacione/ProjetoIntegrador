@@ -22,6 +22,15 @@ $result = $conn->query($sql);
 <html>
 <head>
     <title>Relatório de Dentista</title>
+    <style>
+        body{
+            background-color: black;
+            background-image: url('./ar_system.jpg');
+            background-position: center top;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style> 
 </head>
 <body>
     <h1>Relatório de Dentistas Cadastrados</h1>

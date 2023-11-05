@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $sql = "INSERT INTO cad_dentista (nome, cpf, data_nascimento, cro, telefone, email) VALUES ('$nome', '$cpf', '".$data_nascimento->format('Y-m-d')."', '$cro', '$telefone', '$email')";
         if ($conexao->query($sql) === TRUE) {
             echo '<script>alert("Registro cadastrado com sucesso.");</script>';
-            echo '<meta http-equiv="refresh" content="2;url=menu.html">';
+            echo '<meta http-equiv="refresh" content="2;url=menu.php">';
         } else {
             echo "Erro ao cadastrar registro: " . $conexao->error;
         }
