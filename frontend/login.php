@@ -37,7 +37,7 @@ if (isset($_GET['error']) && $_GET['error'] === '1') {
 
     <div class="header">
       <header>Odonto System</header>
-    </div>
+    </div><br>
 
     <form action="autenticar.php" method="post">
       <h3 style="font-family: sans-serif; text-indent: 20px;">CPF</h3>
