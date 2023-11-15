@@ -13,12 +13,7 @@ if ($conn->connect_error) {
 }
 
 // Inicialize a variável de pesquisa
-$search_name = "";
-
-// Verifique se o formulário de pesquisa foi enviado
-if (isset($_POST['search'])) {
-    $search_name = $_POST['search_name'];
-}
+$search_name = isset($_POST['search_name']) ? $_POST['search_name'] : '';
 
 // Consulta SQL para selecionar dados da tabela "cad_paciente" com base no nome
 $sql = "SELECT *, YEAR(CURDATE()) - YEAR(data_nascimento) - (DATE_FORMAT(CURDATE(), '%m-%d') < DATE_FORMAT(data_nascimento, '%m-%d')) AS idade FROM cad_paciente WHERE nome LIKE '%$search_name%'";
@@ -29,7 +24,7 @@ $result = $conn->query($sql);
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Relatório de Paciente</title>
+    <title>Relatório de Pacientes Cadastrados</title>
     <style>
         body{
             background-color: black;
@@ -39,17 +34,28 @@ $result = $conn->query($sql);
             background-size: cover;
         }
     </style> 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#filtroNome").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#tabelaPacientes tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <h1>Relatório de Pacientes Cadastrados</h1>
 
     <!-- Formulário de pesquisa por nome -->
     <form method="post">
-        <input type="text" name="search_name" placeholder="Nome do paciente" value="<?php echo $search_name; ?>">
+        <input type="text" name="search_name" id="filtroNome" placeholder="Nome do paciente" value="<?php echo $search_name; ?>">
         <input type="submit" name="search" value="Pesquisar">
     </form>
 
-    <table border="1">
+    <table border="1" id="tabelaPacientes">
         <tr>
             <th>ID</th>
             <th>Nome</th>

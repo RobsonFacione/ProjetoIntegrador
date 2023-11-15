@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="relatorio_agendamento_filtrado.php" method="get">
+        <div class="filtro">
+            <label for="paciente">Paciente:</label>
+            <input type="text" id="paciente" name="paciente"><br>
+    
+            <label for="data_inicio">Data de Início:</label>
+            <input type="date" id="data_inicio" name="data_inicio"><br>
+    
+            <label for="data_fim">Data de Fim:</label>
+            <input type="date" id="data_fim" name="data_fim">
+        </div>
+    
+        <div class="botao">
+            <input type="submit" id="botao" value="Filtrar">
+        </div>
+    </form>
+</body>
+</html>

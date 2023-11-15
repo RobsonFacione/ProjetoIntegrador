@@ -10,7 +10,25 @@ if ($conn->connect_error) {
     die("Erro na conexão com o banco de dados: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM vw_agendamento";
+// Lógica de filtragem com as datas
+$data_inicio = isset($_GET['data_inicio']) ? $_GET['data_inicio'] : '';
+$data_fim = isset($_GET['data_fim']) ? $_GET['data_fim'] : '';
+$nome = isset($_GET['nome']) ? $_GET['nome'] : '';
+
+// Modifica a consulta SQL para incluir as condições com base nas variáveis
+$sql = "SELECT * FROM vw_agendamento WHERE 1=1";
+
+if (!empty($nome)) {
+    $sql .= " AND paciente_nome LIKE '%$nome%'";
+}
+
+if (!empty($data_inicio) && !empty($data_fim)) {
+    $sql .= " AND dia BETWEEN '$data_inicio' AND '$data_fim'";
+}
+
+// Adiciona a cláusula ORDER BY para ordenar por ID em ordem crescente
+$sql .= " ORDER BY ID ASC";
+
 $result = $conn->query($sql);
 ?>
 
@@ -30,6 +48,20 @@ $result = $conn->query($sql);
 </head>
 <body>
     <h1>Relatório de Agendamento</h1>
+
+    <form method="get">
+        <label for="nome">Nome do Paciente:</label>
+        <input type="text" name="nome" value="<?php echo $nome; ?>"><br>
+
+        <label for="data_inicio">Data de Início:</label>
+        <input type="date" name="data_inicio" value="<?php echo $data_inicio; ?>"><br>
+
+        <label for="data_fim">Data de Fim:</label>
+        <input type="date" name="data_fim" value="<?php echo $data_fim; ?>"><br>
+
+        <input type="submit" value="Filtrar"><br><br>
+    </form>
+
     <table border="1">
         <tr>
             <th>ID</th>

@@ -31,10 +31,26 @@ $result = $conn->query($sql);
             background-size: cover;
         }
     </style> 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#filtroNome").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#tabelaDentistas tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <h1>Relatório de Dentistas Cadastrados</h1>
-    <table border="1">
+
+    <!-- Adicione um campo de pesquisa dinâmico -->
+    <label for="filtroNome">Filtrar por Nome:</label>
+    <input type="text" id="filtroNome">
+
+    <table border="1" id="tabelaDentistas">
         <tr>
             <th>ID</th>
             <th>Nome</th>
@@ -44,7 +60,6 @@ $result = $conn->query($sql);
             <th>CRO</th>
             <th>Telefone</th>
             <th>Email</th>
-            
             <!-- Adicione mais colunas conforme necessário -->
         </tr>
         <?php
@@ -59,8 +74,6 @@ $result = $conn->query($sql);
                 echo "<td>" . $row["cro"] . "</td>";
                 echo "<td>" . $row["telefone"] . "</td>";
                 echo "<td>" . $row["email"] . "</td>";
-                echo '<td><a href="editar_dentista.php?id=' . $row["ID"] . '">Editar</a></td>';
-                
                 // Adicione mais colunas conforme necessário
                 echo "</tr>";
             }
