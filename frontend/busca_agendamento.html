@@ -1,26 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="busca_agendamento.css">
 </head>
+
 <body>
-    <form action="relatorio_agendamento_filtrado.php" method="get">
-        <div class="filtro">
-            <label for="paciente">Paciente:</label>
-            <input type="text" id="paciente" name="paciente"><br>
-    
-            <label for="data_inicio">Data de Início:</label>
-            <input type="date" id="data_inicio" name="data_inicio"><br>
-    
-            <label for="data_fim">Data de Fim:</label>
-            <input type="date" id="data_fim" name="data_fim">
+
+    <div class="container">
+        <form action="relatorio_agendamento_filtrado.php" method="get">
+
+<header>Busca</header>
+
+            <div class="paciente">
+                <div class="paciente1">
+                    <h3 style="font-family: sans-serif;">Paciente</h3>
+                </div>
+                <div class="paciente2">
+                    <input type="text" id="paciente" name="paciente" placeholder="Digite o nome do Paciente">
+                </div>
+            </div><br>
+            <div class="data_inicio">
+                <div class="data_inicio1">
+                    <h3 style="font-family: sans-serif;">Data de Início</h3>
+                </div>
+                <div class="data_inicio2">
+                    <input type="date" id="data_inicio" name="data_inicio">
+                </div>
+            </div><br>
+            <div class="data_fim">
+                <div class="data_fim1">
+                    <h3 style="font-family: sans-serif;">Data de fim</h3>
+                </div>
+                <div class="data_fim2">
+                    <input type="date" id="data_fim" name="data_fim">
+                </div>
+            </div><br><br>
+
+
+            <div class="botao">
+                <input type="submit" id="botao" value="Filtrar">
+            </div>
+        </form>
+
+        <div class="voltar">
+            <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a>
         </div>
-    
-        <div class="botao">
-            <input type="submit" id="botao" value="Filtrar">
-        </div>
-    </form>
+    </div>
 </body>
+
 </html>

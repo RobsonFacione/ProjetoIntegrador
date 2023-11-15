@@ -60,6 +60,7 @@ $result = $conn->query($sql);
             <th>CRO</th>
             <th>Telefone</th>
             <th>Email</th>
+            <th>Editar</th>
             <!-- Adicione mais colunas conforme necessário -->
         </tr>
         <?php
@@ -74,6 +75,7 @@ $result = $conn->query($sql);
                 echo "<td>" . $row["cro"] . "</td>";
                 echo "<td>" . $row["telefone"] . "</td>";
                 echo "<td>" . $row["email"] . "</td>";
+                echo "<td><a href='editar_dentista.php?id=" . $row["ID"] . "'>Editar</a></td>"; 
                 // Adicione mais colunas conforme necessário
                 echo "</tr>";
             }

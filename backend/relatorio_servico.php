@@ -12,8 +12,16 @@ if ($conn->connect_error) {
     die("Erro na conexão com o banco de dados: " . $conn->connect_error);
 }
 
-// Consulta SQL para selecionar todos os dados da tabela "usuarios"
-$sql = "SELECT * FROM cad_servico";
+// Inicialize a variável de pesquisa
+$search_servico = "";
+
+// Verifique se o formulário de pesquisa foi enviado
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $search_servico = isset($_POST['search_servico']) ? $_POST['search_servico'] : '';
+}
+
+// Consulta SQL para selecionar dados da tabela "cad_servico" com base no serviço
+$sql = "SELECT * FROM cad_servico WHERE servico LIKE '%$search_servico%'";
 $result = $conn->query($sql);
 
 ?>
@@ -31,13 +39,31 @@ $result = $conn->query($sql);
             background-size: cover;
         }
     </style> 
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $("#filtroServico").on("keyup", function() {
+                var value = $(this).val().toLowerCase();
+                $("#tabelaServicos tr").filter(function() {
+                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1);
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <h1>Relatório de Serviço</h1>
-    <table border="1">
+
+    <!-- Formulário de pesquisa por serviço -->
+    <form method="post">
+        <input type="text" name="search_servico" id="filtroServico" placeholder="Nome do serviço" value="<?php echo $search_servico; ?>">
+        <input type="submit" name="search" value="Pesquisar">
+    </form>
+
+    <table border="1" id="tabelaServicos">
         <tr>
             <th>ID</th>
-            <th>servico</th>
+            <th>Serviço</th>
             
             <!-- Adicione mais colunas conforme necessário -->
         </tr>
@@ -52,7 +78,7 @@ $result = $conn->query($sql);
                 echo "</tr>";
             }
         } else {
-            echo "<tr><td colspan='3'>Nenhum usuário encontrado</td></tr>";
+            echo "<tr><td colspan='2'>Nenhum serviço encontrado</td></tr>";
         }
         ?>
     </table><br><br>

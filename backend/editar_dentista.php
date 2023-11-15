@@ -35,16 +35,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $telefone = $_POST["telefone"];
     $email = $_POST["email"];
 
-    $sql = "UPDATE cad_dentista SET nome='$nome', cpf='$cpf', data_nascimento='$data_nascimento', cro='$cro', telefone='$telefone', email='$email' WHERE ID=$id";
+    // Usar declaração preparada para evitar injeção de SQL
+    $sql = "UPDATE cad_dentista SET nome=?, cpf=?, data_nascimento=?, cro=?, telefone=?, email=? WHERE ID=?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssssssi", $nome, $cpf, $data_nascimento, $cro, $telefone, $email, $id);
 
-    if ($conn->query($sql) === TRUE) {
+    if ($stmt->execute()) {
         $mensagem = "Dados do dentista atualizados com sucesso.";
         // Redirecionar para a página de relatório após a edição
         header("Location: relatorio_dentista.php");
         exit;
     } else {
-        $mensagem = "Erro ao atualizar os dados do dentista: " . $conn->error;
+        $mensagem = "Erro ao atualizar os dados do dentista: " . $stmt->error;
     }
+
+    $stmt->close();
 }
 ?>
 
@@ -53,13 +58,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <title>Editar Dentista</title>
     <link rel="stylesheet" href="editar_dentista.css">
+    <style>
+        /* Adicione isso ao seu arquivo editar_dentista.css */
+        .mensagem-sucesso {
+            color: green;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
 <div class="container">
 
     <header>Editar Dados do Dentista</header>
     <?php if ($mensagem !== "") : ?>
-        <p><?php echo $mensagem; ?></p>
+        <p class="mensagem-sucesso"><?php echo $mensagem; ?></p>
     <?php endif; ?>
 
 
@@ -108,7 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h3 style="font-family: sans-serif;">Telefone</h3>
             </div>
             <div class="telefone2">
-                <input type="text" name="telefone" id="telefone "value="<?php echo $dentista["telefone"]; ?>"><br>
+                <input type="text" name="telefone" id="telefone" value="<?php echo $dentista["telefone"]; ?>"><br>
             </div>
         </div>
 
@@ -127,13 +139,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     </form>
 
-        <div class="voltar">
-            <a href="relatorio_dentista.php" id="botaovoltar">Voltar</a>
-        </div>
+    <div class="voltar">
+        <a href="relatorio_dentista.php" id="botaovoltar">Voltar</a>
+    </div>
 
 </div> 
 </body>
 </html>
+
 
 <?php
 // Feche a conexão com o banco de dados
