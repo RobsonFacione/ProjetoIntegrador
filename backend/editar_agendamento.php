@@ -59,6 +59,7 @@ $conn->close();
 <html>
 <head>
     <title>Editar Agendamento</title>
+    <link rel="stylesheet" href="editar_dentista.css">
     <style>
         body{
             background-color: black;
@@ -67,27 +68,88 @@ $conn->close();
             background-repeat: no-repeat;
             background-size: cover;
         }
+
+        body {
+    margin: 0;
+    
+}
+
+
+
+.container {
+    background-color: rgba(255, 255, 255, 0.4); /* Adicione a opacidade ao definir a cor de fundo com rgba */
+    padding: 20px;
+    border: none;
+}
+
+.header {
+    text-align: center;
+    background-color: #6CA6CD;
+    border: none;
+   
+    height: 40px;
+    border-radius: 5px;
+    font-size: 25px;
+    font-family: arial;
+}
+
+#botao {
+    background-color: #A9A9A9; /* Cor de fundo para os botões */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 330px;
+}
+
+#botaovoltar {
+    background-color: #A9A9A9; /* Cor de fundo para os botões */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 300px;
+}
+
+#botao:hover, #botaovoltar:hover {
+    background-color: #6CA6CD; /* Altere a cor ao passar o mouse sobre os botões se desejar */
+}
+
+.botao{
+    text-align: center;
+}
+
     </style> 
 </head>
 <body>
-    <h1>Editar Agendamento</h1>
 
+<div class="container">
+    
+    <div class="header">
+    <header style="background-color: #6CA6CD; border-radius: none;">Editar Agendamento</header>
+    </div><br><br>
     <!-- Exibir a mensagem de sucesso (se houver) -->
     <?php if (!empty($mensagem)) : ?>
         <p><?php echo $mensagem; ?></p>
     <?php endif; ?>
-
+<br>
     <form method="POST">
         <label for="nova_data">Nova Data:</label>
-        <input type="date" id="nova_data" name="nova_data" value="<?php echo $row['dia']; ?>"><br><br>
+        <input type="date" style="font-family: arial; ffont-weight: bold;" id="nova_data" name="nova_data" value="<?php echo $row['dia']; ?>"><br><br>
 
         <label for="nova_hora">Nova Hora:</label>
-        <input type="time" id="nova_hora" name="nova_hora" value="<?php echo $row['hora']; ?>"><br><br>
+        <input type="time" style="font-family: arial; ffont-weight: bold;" id="nova_hora" name="nova_hora" value="<?php echo $row['hora']; ?>"><br><br>
 
-        <input type="submit" value="Salvar"><br><br>
+        <input type="submit" id="botao" value="Salvar">
     </form>
 
-    <a href="relatorio_agendamento.php" id="botaovoltar">Voltar</a>
+    <form action="relatorio_agendamento.php" method="get">
+        <input type="submit" id="botao" value="Voltar">
+    </form>
+
+    </div>
 </body>
 </html>
 

@@ -6,12 +6,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Paciente</title>
     <link rel="stylesheet" href="cad_paciente.css">
+    <style>     
+        body {
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.4); /* Adicione a opacidade ao definir a cor de fundo com rgba */
+    padding: 20px;
+    border: none;
+}
+
+
+
+#botao {
+    background-color: #A9A9A9; /* Cor de fundo para os botões */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 370px;
+}
+
+#botaovoltar {
+    background-color: #A9A9A9; /* Cor de fundo para os botões */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 340px;
+}
+
+#botao:hover, #botaovoltar:hover {
+    background-color: #6CA6CD; /* Altere a cor ao passar o mouse sobre os botões se desejar */
+}
+
+.botao{
+    text-align: center;
+}
+    
+     
+   
+      
+    </style>
 </head>
 
 <body>
     <div class="container">
         
-        <header>Cadastro de Paciente</header>
+        <header style="background-color: #6CA6CD; border: none;">Cadastro de Paciente</header>
 
 
         <form action="cadastro_cad_paciente.php" method="post"> <!--preenchimento igual o banco de dados-->
@@ -20,7 +65,7 @@
                     <h3 style="font-family: sans-serif;">Nome</h3>
                 </div>
                 <div class="nome2">
-                    <input type="text" name="nome" id="nome" placeholder="Digite o nome" required>
+                    <input type="text" name="nome" id="nome" style="width: 360px;" placeholder="Digite o nome" required>
                 </div>
             </div><br>
 
@@ -31,7 +76,7 @@
                 <div class="cpf2">
                     <input type="number" name="cpf" id="cpf" placeholder="Digite o CPF" required>
                 </div>
-            </div><br>
+            </div>
 
             <div class="data_nascimento">
                 <div class="data_nascimento1">
@@ -50,14 +95,14 @@
                 <div class="telefone2">
                     <input type="tel" name="telefone" id="telefone" placeholder="Digite o telefone">
                 </div>
-            </div><br>
+            </div>
 
             <div class="email">
                 <div class="email1">
                     <h3 style="font-family: sans-serif;">E-mail</h3>
                 </div>
                 <div class="email2">
-                    <input type="email" name="email" id="email" placeholder="Informe seu email">
+                    <input type="email" name="email" id="email" style="width: 200px;" placeholder="Informe seu email">
                 </div>
             </div>
             <br><br>

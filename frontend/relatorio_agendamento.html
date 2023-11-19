@@ -6,6 +6,51 @@
     <meta name="viewport" content="width=, initial-scale=1.0">
     <title>Relatório de Agendamento</title>
     <link rel="stylesheet" href="relatorio_servico.css">
+    <style>
+        body {
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.4); /* Adicione a opacidade ao definir a cor de fundo com rgba */
+    padding: 20px;
+    border: none;
+}
+
+.header {
+    text-align: center;
+    background-color: #6CA6CD;
+    border: none;
+}
+
+#botao {
+    background-color: #A9A9A9; /* Cor de fundo para os botões */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 400px;
+}
+
+#botaovoltar {
+    background-color: #A9A9A9; /* Cor de fundo para os botões */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 370px;
+}
+
+#botao:hover, #botaovoltar:hover {
+    background-color: #6CA6CD; /* Altere a cor ao passar o mouse sobre os botões se desejar */
+}
+
+.botao{
+    text-align: center;
+}
+    </style>
 </head>
 
 <body>
@@ -20,15 +65,15 @@
             <div class="botao">
                 <input type="submit" id="botao" value="Editar / Excluir">
             </div>
-        </form><br>
+        </form>
 
         
 
         <form action="busca_agendamento.html" method="get">
             <div class="botao">
-                <input type="submit" id="botao" value="Buscar">
+                <input type="submit" id="botao" style="text-align: center;" value="Buscar">
             </div>
-        </form>
+        </form><br>
 
         
 

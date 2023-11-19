@@ -58,7 +58,60 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <title>Editar Dentista</title>
     <link rel="stylesheet" href="editar_dentista.css">
-    <style>
+    <style>        
+        body {
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.4); /* Adicione a opacidade ao definir a cor de fundo com rgba */
+    padding: 20px;
+    border: none;
+}
+
+
+
+#botao {
+    background-color: #A9A9A9; /* Cor de fundo para os botões */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 380px;
+}
+
+#botaovoltar {
+    background-color: #A9A9A9; /* Cor de fundo para os botões */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 350px;
+}
+
+#botao:hover, #botaovoltar:hover {
+    background-color: #6CA6CD; /* Altere a cor ao passar o mouse sobre os botões se desejar */
+}
+
+.botao{
+    text-align: center;
+}
+    
+.header {
+    text-align: center;
+    background-color: #6CA6CD;
+    border: none;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 25px;
+    font-family: arial;
+}    
+   
+      
+   
         /* Adicione isso ao seu arquivo editar_dentista.css */
         .mensagem-sucesso {
             color: green;
@@ -69,7 +122,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 <div class="container">
 
-    <header>Editar Dados do Dentista</header>
+    <header style="background-color: #6CA6CD; border: none;">Editar Dados do Dentista</header>
     <?php if ($mensagem !== "") : ?>
         <p class="mensagem-sucesso"><?php echo $mensagem; ?></p>
     <?php endif; ?>
@@ -84,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <h3 style="font-family: sans-serif;">Nome</h3>
             </div>
             <div class="nome2">
-                <input type="text" name="nome" id="nome" value="<?php echo $dentista["nome"]; ?>"><br>
+                <input type="text" style="width:370px;" name="nome" id="nome" value="<?php echo $dentista["nome"]; ?>"><br>
             </div>
         </div><br>
 
@@ -122,14 +175,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="telefone2">
                 <input type="text" name="telefone" id="telefone" value="<?php echo $dentista["telefone"]; ?>"><br>
             </div>
-        </div>
+        </div><br>
 
         <div class="email">
             <div class="email1">
                 <h3 style="font-family: sans-serif;">E-mail</h3>
             </div>
             <div class="email2">
-                <input type="text" name="email" id="email" value="<?php echo $dentista["email"]; ?>"><br>
+                <input type="text" style="width:370px;" name="email" id="email" value="<?php echo $dentista["email"]; ?>"><br>
             </div>
         </div>
 

@@ -53,7 +53,48 @@ $horariosDisponiveis = getHorariosDisponiveis($conexao, $dataSelecionada);
             border: 1px solid black ;
         }
 
-       
+        
+        body {
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.4); /* Adicione a opacidade ao definir a cor de fundo com rgba */
+    padding: 20px;
+    border: none;
+}
+
+.header {
+    text-align: center;
+    background-color: #6CA6CD;
+    border: none;
+    border-radius: 4px;
+}
+
+#botao{
+    background-color: #A9A9A9; /* Cor de fundo para os botões */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 240px;
+}
+
+#botaovoltar {
+    background-color: #A9A9A9; /* Cor de fundo para os botões */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 210px;
+}
+
+#botao:hover, #botaovoltar:hover {
+    background-color: #6CA6CD; /* Altere a cor ao passar o mouse sobre os botões se desejar */
+}
+   
     </style>
 </head>
 
@@ -61,7 +102,7 @@ $horariosDisponiveis = getHorariosDisponiveis($conexao, $dataSelecionada);
 
     <div class="container">
         <div class="header">
-            <header>Agendamento</header>
+            <header style="background-color: #6CA6CD; border: none"; >Agendamento</header>
         </div>
         <form action="agendamento.php" method="post">
             <div class="paciente">
@@ -118,6 +159,7 @@ $horariosDisponiveis = getHorariosDisponiveis($conexao, $dataSelecionada);
                         $conexao->close();
                         ?>
                     </select><br>
+                </div>
                     <!-- Fim select dinâmico dentista -->
                     <div class="servico">
                         <div class="servico1">
@@ -140,6 +182,7 @@ $horariosDisponiveis = getHorariosDisponiveis($conexao, $dataSelecionada);
                         <div class="botao">
                             <input type="submit" id="botao" value="Agendar">
                         </div>
+                    </div>
         </form>
 
         <div class="voltar">

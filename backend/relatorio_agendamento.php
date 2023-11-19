@@ -54,10 +54,10 @@ $result = $conn->query($sql);
         <input type="text" name="nome" value="<?php echo $nome; ?>"><br>
 
         <label for="data_inicio">Data de Início:</label>
-        <input type="date" name="data_inicio" value="<?php echo $data_inicio; ?>"><br>
+        <input type="date" name="data_inicio" value="<?php echo $data_inicio; ?>">
 
         <label for="data_fim">Data de Fim:</label>
-        <input type="date" name="data_fim" value="<?php echo $data_fim; ?>"><br>
+        <input type="date" name="data_fim" value="<?php echo $data_fim; ?>">
 
         <input type="submit" value="Filtrar"><br><br>
     </form>
@@ -89,11 +89,11 @@ $result = $conn->query($sql);
             echo "<tr><td colspan='3'>Nenhum usuário encontrado</td></tr>";
         }
         ?>
-    </table><br><br>
+    </table><br>
 
     
 
-    <a href="relatorio_agendamento.html" id="botaovoltar">Voltar</a>
+    <a href="relatorio_agendamento.html" id="botaovoltar">Voltar</a><br>
 </body>
 </html>
 

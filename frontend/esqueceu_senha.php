@@ -64,6 +64,63 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Esqueceu a Senha?</title>
     <link rel="stylesheet" href="esqueceu_senha.css">
+    <style>       
+        body {
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.4); /* Adicione a opacidade ao definir a cor de fundo com rgba */
+    padding: 20px;
+    border: none;
+}
+
+.header {
+    text-align: center;
+    background-color: #6CA6CD;
+    border: none;
+    width: 300px;
+}
+
+#botao {
+    background-color: #A9A9A9; /* Cor de fundo para os botões */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 330px;
+}
+
+#botaovoltar {
+    background-color: #A9A9A9; /* Cor de fundo para os botões */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 300px;
+}
+
+#botao:hover, #botaovoltar:hover {
+    background-color: #6CA6CD; /* Altere a cor ao passar o mouse sobre os botões se desejar */
+}
+
+.botao{
+    text-align: center;
+}
+    
+     
+   
+      
+    
+        .error-message {
+            color: black;
+            text-align: center;
+            font-family: arial;
+            font-weight: bold;
+        }
+    </style>
 </head>
 
 <body>
@@ -78,7 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <!-- Adicione um campo oculto para o e-mail -->
             <input type="hidden" name="email" value="<?php echo isset($_POST['email']) ? $_POST['email'] : ''; ?>">
             <div class="email">
-                <input type="email" id="email" name="email" placeholder="Digite o e-mail" required>
+                <input type="email" style="width: 300px" id="email" name="email" placeholder="Digite o e-mail" required>
             </div><br>
             <div class="botao">
                 <input type="submit" id="botao" value="Enviar">

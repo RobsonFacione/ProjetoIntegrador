@@ -64,11 +64,66 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <head>
     <title>Editar Dados do Paciente</title>
     <link rel="stylesheet" href="editar_paciente.css">
+    <style>     
+        body {
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.4); /* Adicione a opacidade ao definir a cor de fundo com rgba */
+    padding: 20px;
+    border: none;
+}
+
+
+
+#botao {
+    background-color: #A9A9A9; /* Cor de fundo para os botões */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 370px;
+}
+
+#botaovoltar {
+    background-color: #A9A9A9; /* Cor de fundo para os botões */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 340px;
+}
+
+#botao:hover, #botaovoltar:hover {
+    background-color: #6CA6CD; /* Altere a cor ao passar o mouse sobre os botões se desejar */
+}
+
+.botao{
+    text-align: center;
+}
+    
+.header {
+    text-align: center;
+    background-color: #6CA6CD;
+    border: none;
+    width: 300px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 25px;
+    font-family: arial;
+}    
+   
+      
+    </style>
 </head>
 <body>
     <div class="container">
 
-    <header>Editar Dados do Paciente</header>
+    <header style="background-color: #6CA6CD ; border:none;">Editar Dados do Paciente</header>
+    
     <?php if (!empty($update_message)) : ?>
         <p><?php echo $update_message; ?></p>
     <?php endif; ?>
@@ -80,7 +135,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <h3 style="font-family: sans-serif;">Nome</h3>
         </div>
         <div class="paciente2">
-            <input type="text" name="novo_nome" id="paciente" text-indent="10px" placeholder="Novo Nome" value="<?php echo $nome; ?>">
+            <input type="text" style="width: 360px" name="novo_nome" id="paciente" text-indent="10px" placeholder="Novo Nome" value="<?php echo $nome; ?>">
         </div>
     </div><br>
 
@@ -109,14 +164,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="telefone2">
             <input type="text" name="novo_telefone" id="telefone"placeholder="Novo Telefone" value="<?php echo $telefone; ?>">
         </div>
-    </div><br>
+    </div>
 
     <div class="email">
         <div class="email1">
             <h3 style="font-family: sans-serif;">E-mail</h3>
         </div>
         <div class="email2">
-            <input type="text" name="novo_email" id="email" placeholder="Novo Email" value="<?php echo $email; ?>">
+            <input type="text" style="width: 200px" name="novo_email" id="email" placeholder="Novo Email" value="<?php echo $email; ?>">
         </div>
     </div><br>
 

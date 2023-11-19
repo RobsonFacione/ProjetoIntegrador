@@ -6,7 +6,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="cadastro.css">
+    <style>     
+        body {
+    margin: 0;
+}
 
+.container {
+    background-color: rgba(255, 255, 255, 0.4); /* Adicione a opacidade ao definir a cor de fundo com rgba */
+    padding: 20px;
+    border: none;
+}
+
+
+
+#botao {
+    background-color: #A9A9A9; /* Cor de fundo para os botões */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 360px;
+}
+
+#botaovoltar {
+    background-color: #A9A9A9; /* Cor de fundo para os botões */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 330px;
+}
+
+#botao:hover, #botaovoltar:hover {
+    background-color: #6CA6CD; /* Altere a cor ao passar o mouse sobre os botões se desejar */
+}
+
+.botao{
+    text-align: center;
+}
+    
+     
+   
+      
+    </style>
 </head>
 
 <body>
@@ -14,19 +58,19 @@
     <div class="container">
 
         <div class="header">
-        <header>Cadastro</header><br>
+        <header style="border: none; background-color: #6CA6CD;">Cadastro</header><br>
         </div>
 
         <form action="cad_paciente.html" method="get">
             <div class="cad_paciente">
                 <input type="submit" id="botao" value="Cadastro de Paciente">
-            </div><br>
+            </div>
         </form>
 
         <form action="cad_dentista.html" method="get">
             <div class="cad_dentista">
                 <input type="submit" id="botao" value="Cadastro de Dentista">
-            </div><br>
+            </div>
         </form>
 
         <form action="cad_servico.html" method="get">

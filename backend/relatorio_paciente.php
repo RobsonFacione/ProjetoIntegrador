@@ -97,7 +97,7 @@ $totalPacientes = $countRow['total'];
     <!-- Mensagem com o número de pacientes cadastrados -->
     <p>Pacientes Cadastrados: <?php echo $totalPacientes; ?> </p>
 
-    <br><br>
+    <br>
     <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a>
 </body>
 </html>

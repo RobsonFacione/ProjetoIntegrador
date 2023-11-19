@@ -5,11 +5,56 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro Dentista</title>
     <link rel="stylesheet" href="cad_dentista.css">
+    <style>     
+        body {
+    margin: 0;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.4); /* Adicione a opacidade ao definir a cor de fundo com rgba */
+    padding: 20px;
+    border: none;
+}
+
+
+
+#botao {
+    background-color: #A9A9A9; /* Cor de fundo para os botões */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 350px;
+}
+
+#botaovoltar {
+    background-color: #A9A9A9; /* Cor de fundo para os botões */
+    color: black;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 320px;
+}
+
+#botao:hover, #botaovoltar:hover {
+    background-color: #6CA6CD; /* Altere a cor ao passar o mouse sobre os botões se desejar */
+}
+
+.botao{
+    text-align: center;
+}
+    
+     
+   
+      
+    </style>
 </head>
 <body>
     <div class="container">
 
-        <header>Cadastro de Dentista</header>
+        <header style="background-color: #6CA6CD; border: none;">Cadastro de Dentista</header>
 
 
         <form action="cadastro_cad_dentista.php" method="post"> <!--preenchimento igual o banco de dados-->
@@ -33,7 +78,7 @@
 
             <div class="data_nascimento">
                 <div class="data_nascimento1">
-                    <h3 style="font-family: sans-serif;">Data de Nascimento</h3>
+                    <h3 style="font-family: sans-serif;">Data Nascimento</h3>
                 </div>
                 <div class="data_nascimento2">
                     <input type="date" name="data_nascimento" id="data_nascimento"

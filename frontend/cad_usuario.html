@@ -6,6 +6,64 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cadastro Usuário</title>
   <link rel="stylesheet" href="cad_usuario.css">
+  <style>       
+    body {
+margin: 0;
+}
+
+.container {
+background-color: rgba(255, 255, 255, 0.4); /* Adicione a opacidade ao definir a cor de fundo com rgba */
+padding: 20px;
+border: none;
+}
+
+.header {
+text-align: center;
+background-color: #6CA6CD;
+border: none;
+border-radius: 5px;
+
+}
+
+#botao {
+background-color: #A9A9A9; /* Cor de fundo para os botões */
+color: black;
+padding: 10px 15px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+width: 310px;
+}
+
+#botaovoltar {
+background-color: #A9A9A9; /* Cor de fundo para os botões */
+color: black;
+padding: 10px 15px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+width: 280px;
+}
+
+#botao:hover, #botaovoltar:hover {
+background-color: #6CA6CD; /* Altere a cor ao passar o mouse sobre os botões se desejar */
+}
+
+.botao{
+text-align: center;
+}
+
+ 
+
+  
+
+    .error-message {
+        color: black;
+        text-align: center;
+        font-family: arial;
+        font-weight: bold;
+    }
+</style>
 </head>
 
 <body>
@@ -13,7 +71,7 @@
   <div class="container">
 
     <div class="header">
-      <header>Cadastro Usuário</header>
+      <header style="background-color: #6CA6CD; border: none;">Cadastro Usuário</header>
     </div>
 
     <form action="cadastro_cad_usuario.php" method="post">
