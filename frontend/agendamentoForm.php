@@ -39,6 +39,22 @@ $horariosDisponiveis = getHorariosDisponiveis($conexao, $dataSelecionada);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Agendamento</title>
     <link rel="stylesheet" href="agendamento.css">
+    <style>
+        #pacienteId{
+            width: 30px;
+            border-radius: 4px;
+            border: 1px solid black ;
+            text-align: center;
+        }
+
+        #pacienteNome{
+            width: 198px;
+            border-radius: 4px;
+            border: 1px solid black ;
+        }
+
+       
+    </style>
 </head>
 
 <body>
@@ -53,18 +69,10 @@ $horariosDisponiveis = getHorariosDisponiveis($conexao, $dataSelecionada);
                     <h3 style="font-family: sans-serif;" id="paciente1">Nome</h3>
                 </div>
                 <div class="paciente2">
-                    <!-- Select dinâmico paciente -->
-                    <select name="paciente_id" id="pacienteSelect">
-                        <?php
-                        $sql = "SELECT id, nome FROM cad_paciente";
-                        $result = $conexao->query($sql);
-
-                        while ($row = $result->fetch_assoc()) {
-                            echo "<option value='" . $row['id'] . "'>" . $row['id'] . "</option>";
-                        }
-                        ?>
-                    </select>
-                    <input type="text" id="pacienteNome" readonly>
+                    <!-- Campo de texto para o ID do paciente -->
+                    <input type="text" name="paciente_id" id="pacienteId" placeholder="ID" required>
+                    <input type="text" id="pacienteNome" readonly><br>
+                    <a href="relatorio_paciente.php">Pesquisa Paciente</a>
                 </div>
             </div><br>
 
@@ -140,14 +148,13 @@ $horariosDisponiveis = getHorariosDisponiveis($conexao, $dataSelecionada);
 
     </div>
     <script>
-        const pacienteSelect = document.getElementById("pacienteSelect");
+        const pacienteIdInput = document.getElementById("pacienteId");
         const pacienteNome = document.getElementById("pacienteNome");
         const dataInput = document.getElementById("data");
         const horaSelect = document.getElementById("hora");
 
-        pacienteSelect.addEventListener("change", function () {
-            const selectedOption = pacienteSelect.options[pacienteSelect.selectedIndex];
-            const paciente_id = selectedOption.value;
+        pacienteIdInput.addEventListener("input", function () {
+            const paciente_id = pacienteIdInput.value;
 
             if (paciente_id) {
                 // Faz uma solicitação AJAX para buscar o nome do paciente
@@ -166,36 +173,33 @@ $horariosDisponiveis = getHorariosDisponiveis($conexao, $dataSelecionada);
         });
 
         function atualizarHorariosDisponiveis() {
-    // Lógica para atualizar os horários disponíveis com base na data selecionada
-    const dataSelecionada = dataInput.value;
-    const xhr = new XMLHttpRequest();
-    xhr.open("POST", "atualizar_horarios.php", true);
-    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState === 4 && xhr.status === 200) {
-            try {
-                const horarios = JSON.parse(xhr.responseText);
+            // Lógica para atualizar os horários disponíveis com base na data selecionada
+            const dataSelecionada = dataInput.value;
+            const xhr = new XMLHttpRequest();
+            xhr.open("POST", "atualizar_horarios.php", true);
+            xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    try {
+                        const horarios = JSON.parse(xhr.responseText);
 
-                // Verifica se horarios é uma array
-                if (Array.isArray(horarios)) {
-                    horaSelect.innerHTML = "";
-                    horarios.forEach(function (horario) {
-                        horaSelect.innerHTML += "<option value='" + horario + "'>" + horario + "</option>";
-                    });
-                } else {
-                    console.error("Os horários recebidos não são uma array:", horarios);
+                        // Verifica se horarios é uma array
+                        if (Array.isArray(horarios)) {
+                            horaSelect.innerHTML = "";
+                            horarios.forEach(function (horario) {
+                                horaSelect.innerHTML += "<option value='" + horario + "'>" + horario + "</option>";
+                            });
+                        } else {
+                            console.error("Os horários recebidos não são uma array:", horarios);
+                        }
+                    } catch (error) {
+                        console.error("Erro ao processar resposta JSON:", error);
+                    }
                 }
-            } catch (error) {
-                console.error("Erro ao processar resposta JSON:", error);
-            }
+            };
+            xhr.send("dataSelecionada=" + dataSelecionada);
         }
-    };
-    xhr.send("dataSelecionada=" + dataSelecionada);
-}
-
-
     </script>
 </body>
 
 </html>
-

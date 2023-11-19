@@ -84,7 +84,7 @@ $conn->close();
         <label for="nova_hora">Nova Hora:</label>
         <input type="time" id="nova_hora" name="nova_hora" value="<?php echo $row['hora']; ?>"><br><br>
 
-        <input type="submit" value="Salvar">
+        <input type="submit" value="Salvar"><br><br>
     </form>
 
     <a href="relatorio_agendamento.php" id="botaovoltar">Voltar</a>

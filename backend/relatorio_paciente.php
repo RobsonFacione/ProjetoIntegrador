@@ -19,6 +19,12 @@ $search_name = isset($_POST['search_name']) ? $_POST['search_name'] : '';
 $sql = "SELECT *, YEAR(CURDATE()) - YEAR(data_nascimento) - (DATE_FORMAT(CURDATE(), '%m-%d') < DATE_FORMAT(data_nascimento, '%m-%d')) AS idade FROM cad_paciente WHERE nome LIKE '%$search_name%'";
 $result = $conn->query($sql);
 
+// Consulta SQL para contar o número de pacientes na tabela
+$countSql = "SELECT COUNT(*) as total FROM cad_paciente WHERE nome LIKE '%$search_name%'";
+$countResult = $conn->query($countSql);
+$countRow = $countResult->fetch_assoc();
+$totalPacientes = $countRow['total'];
+
 ?>
 
 <!DOCTYPE html>
@@ -86,9 +92,13 @@ $result = $conn->query($sql);
             echo "<tr><td colspan='8'>Nenhum paciente encontrado</td></tr>";
         }
         ?>
-    </table><br><br>
-    
-    <a href="relatorio_paciente.html">Voltar</a>
+    </table> <!-- Movendo a tag de fechamento da tabela -->
+
+    <!-- Mensagem com o número de pacientes cadastrados -->
+    <p>Pacientes Cadastrados: <?php echo $totalPacientes; ?> </p>
+
+    <br><br>
+    <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a>
 </body>
 </html>
 

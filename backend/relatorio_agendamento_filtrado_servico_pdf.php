@@ -1,5 +1,5 @@
 <?php
-// relatorio_agendamento_filtrado_pdf.php
+// relatorio_agendamento_filtrado_servico_pdf.php
 
 // Inclua a biblioteca TCPDF
 require_once('TCPDF-main/tcpdf.php');
@@ -18,24 +18,24 @@ if ($conn->connect_error) {
 }
 
 // Obter parâmetros do formulário
-$paciente = isset($_GET['paciente']) ? $_GET['paciente'] : "";
+$servico = isset($_GET['servico']) ? $_GET['servico'] : "";
 $data_inicio = isset($_GET['data_inicio']) ? $_GET['data_inicio'] : "";
 $data_fim = isset($_GET['data_fim']) ? $_GET['data_fim'] : "";
 
 // Construir a consulta SQL com base nos parâmetros
 $sql = "SELECT * FROM vw_agendamento";
 
-if (!empty($paciente) || (!empty($data_inicio) && !empty($data_fim))) {
+if (!empty($servico) || (!empty($data_inicio) && !empty($data_fim))) {
     $sql .= " WHERE 1=1";
 
-    if (!empty($paciente)) {
-        $sql .= " AND paciente_nome LIKE '%$paciente%'";
+    if (!empty($servico)) {
+        $sql .= " AND servico_nome LIKE '%$servico%'";
     }
 
     if (!empty($data_inicio) && !empty($data_fim)) {
         $sql .= " AND dia BETWEEN '$data_inicio' AND '$data_fim'";
     }
-
+}
     // Adicione a ordenação por ID
     $sql .= " ORDER BY id ASC";
 
@@ -43,13 +43,13 @@ if (!empty($paciente) || (!empty($data_inicio) && !empty($data_fim))) {
 
     // Criar uma instância do TCPDF
     $pdf = new TCPDF();
-    $pdf->SetTitle('Relatório de Agendamento');
+    $pdf->SetTitle('Relatório de Consulta de Serviços');
 
     // Adicionar uma página ao PDF
     $pdf->AddPage();
 
     $pdf->SetFont('times', 'B', 16); // Definir fonte, negrito e tamanho
-    $pdf->Cell(0, 10, 'Relatório de Agendamento', 0, 1, 'C'); // Célula que abrange toda a largura
+    $pdf->Cell(0, 10, 'Relatório de Consulta de Serviços', 0, 1, 'C'); // Célula que abrange toda a largura
 
     // Definir fonte e tamanho
     $pdf->SetFont('times', '', 12);
@@ -85,18 +85,17 @@ if (!empty($paciente) || (!empty($data_inicio) && !empty($data_fim))) {
         $pdf->Cell(180, 10, "Nenhum resultado encontrado.", 1, 1, 'C');
     }
 
-    // Adicionar a mensagem ao PDF
-    $pdf->Ln(); // Adicionar espaço antes da mensagem
-    $pdf->Cell(0, 10, "Número de consultas agendadas: $consultaAgendadaCount", 0, 1, 'L');
+ // Adicionar a mensagem ao PDF
+ $pdf->Ln(); // Adicionar espaço antes da mensagem
+ $pdf->Cell(0, 10, "Número de consultas agendadas: $consultaAgendadaCount", 0, 1, 'L');
 
     // Saída do PDF para o navegador
-    $pdf->Output('relatorio_agendamento.pdf', 'I');
+    $pdf->Output('relatorio_servico.pdf', 'I');
 
-    // Limpar o buffer de saída
-    ob_end_clean();
-} else {
-    echo "Nenhum resultado encontrado.";
-}
+ 
+
+// Limpar o buffer de saída
+ob_end_flush();
 
 $conn->close();
 ?>

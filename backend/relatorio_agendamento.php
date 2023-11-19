@@ -91,7 +91,7 @@ $result = $conn->query($sql);
         ?>
     </table><br><br>
 
-    <a href="pdf_agendamento.php">Gerar PDF</a><br><br>
+    
 
     <a href="relatorio_agendamento.html" id="botaovoltar">Voltar</a>
 </body>

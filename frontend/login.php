@@ -65,7 +65,7 @@ if (isset($_GET['error']) && $_GET['error'] === '1') {
     </form><br>
 
 <div class="esqueceu">
-    <form action="esqueceu_senha.html" method="get">
+    <form action="esqueceu_senha.php" method="get">
       <input type="submit" id="botaocadastre" value="Esqueceu a Senha?">
     </form>
 </div><br>

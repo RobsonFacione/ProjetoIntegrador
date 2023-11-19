@@ -15,7 +15,7 @@ if ($conn->connect_error) {
 }
 
 // Obter parâmetros do formulário
-$paciente = isset($_GET['paciente']) ? $_GET['paciente'] : "";
+$servico = isset($_GET['servico']) ? $_GET['servico'] : "";
 $data_inicio = isset($_GET['data_inicio']) ? $_GET['data_inicio'] : "";
 $data_fim = isset($_GET['data_fim']) ? $_GET['data_fim'] : "";
 
@@ -31,11 +31,11 @@ $deslocamento = ($pagina_atual - 1) * $resultados_por_pagina;
 // Construir a consulta SQL com base nos parâmetros, na paginação e na ordenação por ID
 $sql = "SELECT * FROM vw_agendamento";
 
-if (!empty($paciente) || (!empty($data_inicio) && !empty($data_fim))) {
+if (!empty($servico) || (!empty($data_inicio) && !empty($data_fim))) {
     $sql .= " WHERE 1=1";
 
-    if (!empty($paciente)) {
-        $sql .= " AND paciente_nome LIKE '%$paciente%'";
+    if (!empty($servico)) {
+        $sql .= " AND servico_nome LIKE '%$servico%'";
     }
 
     if (!empty($data_inicio) && !empty($data_fim)) {
@@ -81,7 +81,7 @@ if ($result->num_rows > 0) {
 
     echo "<div>";
     for ($i = 1; $i <= $total_paginas; $i++) {
-        echo "<a href='relatorio_agendamento_filtrado.php?paciente=$paciente&data_inicio=$data_inicio&data_fim=$data_fim&pagina=$i'>$i</a> ";
+        echo "<a href='relatorio_agendamento_filtrado_servico.php?servico=$servico&data_inicio=$data_inicio&data_fim=$data_fim&pagina=$i'>$i</a> ";
     }
     echo "</div>";
 
@@ -90,8 +90,8 @@ if ($result->num_rows > 0) {
 
     // Adicione os links no final do arquivo
     echo "<br><br>";
-    echo "<a href='relatorio_agendamento_filtrado_pdf.php?paciente=$paciente&data_inicio=$data_inicio&data_fim=$data_fim'>Gerar PDF</a><br><br>";
-    echo "<a href='relatorio_agendamento.html' id='botaovoltar'>Voltar</a>";
+    echo "<a href='relatorio_agendamento_filtrado_servico_pdf.php?servico=$servico&data_inicio=$data_inicio&data_fim=$data_fim'>Gerar PDF</a><br><br>";
+    echo "<a href='busca_servico.html' id='botaovoltar'>Voltar</a>";
 } else {
     echo "Nenhum resultado encontrado.";
 }

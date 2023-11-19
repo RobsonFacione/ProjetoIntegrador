@@ -22,7 +22,7 @@ if (isset($_SESSION['nome_do_usuario'])) {
     <div class="container">
         <div class="header">
             <header><?php echo "Bem-vindo, " . $nomeUsuario; ?></header>
-        </div>
+        </div><br>
 
         <form action="agendamentoForm.php" method="get">
             <div class="agendamento">
@@ -44,7 +44,7 @@ if (isset($_SESSION['nome_do_usuario'])) {
         
         <form action="login.php" method="get">
             <div class="sair">
-                <input type="submit" id="botaovoltar" value="Sair">
+                <input type="submit" id="botaovoltar" background-color="green" value="Sair">
             </div><br>
         </form>
 

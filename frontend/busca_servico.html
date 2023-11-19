@@ -6,21 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="busca_agendamento.css">
+    <style>
+        #servico {
+
+            background-color: white;
+            margin: 0px 10px;
+            color: black;
+            width: 200px;
+            height: 15px;
+            border-radius: 4px;
+            border: 1px solid black;
+            font-size: 15px;
+            font-family: sans-serif;
+            padding-left: auto;
+
+        }
+    </style>
 </head>
 
 <body>
 
     <div class="container">
-        <form action="relatorio_agendamento_filtrado.php" method="get">
-<div class="header">
-<header>Busca</header>
-</div>
-            <div class="paciente">
-                <div class="paciente1">
-                    <h3 style="font-family: sans-serif;">Paciente</h3>
+        <form action="relatorio_agendamento_filtrado_servico.php" method="get">
+            <div class="header">
+                <header style="font-weight: bold;">Busca</header>
+            </div>
+            <div class="servico">
+                <div class="servico1">
+                    <h3 style="font-family: sans-serif;">Serviço</h3>
                 </div>
-                <div class="paciente2">
-                    <input type="text" id="paciente" name="paciente" placeholder="Digite o nome do Paciente">
+                <div class="servico2">
+                    <input type="text" id="servico" name="servico" placeholder="Digite o Serviço">
                 </div>
             </div><br>
             <div class="data_inicio">
@@ -47,7 +63,7 @@
         </form>
 
         <div class="voltar">
-            <a href="javascript:history.go(-1)" id="botaovoltar">Voltar</a>
+            <a href="relatorio_servico.html" id="botaovoltar">Voltar</a>
         </div>
     </div>
 </body>
