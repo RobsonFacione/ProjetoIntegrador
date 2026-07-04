@@ -6,4 +6,4 @@ CRUD
 
 Linguagens usadas HTML, CSS, PHP, JAVASCRIPT
 
-Banco de Dados
+Banco de Dados MariaDB
